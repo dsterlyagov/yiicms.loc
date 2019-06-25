@@ -1,11 +1,14 @@
 <?php
 
 namespace app\controllers;
+use app\models\Book;
 use yii\web\Controller;
 class BookController extends Controller
 { public function actionIndex(){
-    ob_start();
-    echo 11;
+    $model = new Book;
+    $model->title = 'Война и мир';
+    $model->author = 'Л. Толстой';
+    $model->save(false);
 }
 
 }
